@@ -1,0 +1,9 @@
+{
+  "name": "metamask-agent-wallet-codex-plugin",
+  "private": true,
+  "description": "Validators for the MetaMask Agent Wallet Codex plugin package",
+  "scripts": {
+    "validate": "node scripts/validate-plugin.mjs",
+    "test": "node scripts/validate-plugin.mjs && node scripts/validate-evals.mjs"
+  }
+}

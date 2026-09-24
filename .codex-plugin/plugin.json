@@ -1,0 +1,46 @@
+{
+  "name": "metamask-agent-wallet",
+  "version": "1.0.0",
+  "description": "Official MetaMask Agent Wallet skills for Codex: sign in, check balances, transfer tokens, swap and bridge, trade perps, and earn yield through the local mm CLI.",
+  "author": {
+    "name": "MetaMask",
+    "url": "https://metamask.io"
+  },
+  "homepage": "https://docs.metamask.io/agent-wallet",
+  "repository": "https://github.com/MetaMask/agent-wallet-codex-plugin",
+  "license": "MIT",
+  "keywords": [
+    "metamask",
+    "wallet",
+    "ethereum",
+    "evm",
+    "swap",
+    "bridge",
+    "perps",
+    "prediction-markets",
+    "agent-wallet",
+    "codex"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "MetaMask Agent Wallet",
+    "shortDescription": "Self-custodial agent wallet: balances, transfers, swaps, perps, and earn via the mm CLI.",
+    "longDescription": "Use MetaMask Agent Wallet from Codex and ChatGPT desktop. The plugin packages official mm CLI skills so you can sign in, inspect addresses and balances, quote and execute swaps or bridges, trade Hyperliquid perps, use Polymarket, and supply or withdraw from yield vaults. The wallet stays self-custodial: Guard Mode, 2FA, simulation, and threat scanning apply before funds move. This plugin runs the local mm CLI, so it is desktop and Codex CLI focused rather than ChatGPT on the web or mobile.",
+    "developerName": "MetaMask",
+    "category": "Developer Tools",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://docs.metamask.io/agent-wallet",
+    "privacyPolicyURL": "https://consensys.io/privacy-notice",
+    "termsOfServiceURL": "https://consensys.io/terms-of-use",
+    "defaultPrompt": [
+      "Set up MetaMask Agent Wallet: help me pick a sign-in method, wallet mode, and trading mode, then show my address.",
+      "Show my MetaMask Agent Wallet address and USDC balance.",
+      "Quote swapping 0.01 ETH to USDC on Base, then wait for my confirmation before executing.",
+      "List recent transactions for my active MetaMask Agent Wallet.",
+      "Check MetaMask CLI readiness with mm doctor and tell me what is missing."
+    ],
+    "brandColor": "#F6851B",
+    "composerIcon": "./assets/logo.svg",
+    "logo": "./assets/logo.svg"
+  }
+}

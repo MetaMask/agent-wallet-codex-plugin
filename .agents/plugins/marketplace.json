@@ -1,0 +1,20 @@
+{
+  "name": "local-metamask-agent-wallet",
+  "interface": {
+    "displayName": "Local MetaMask Agent Wallet"
+  },
+  "plugins": [
+    {
+      "name": "metamask-agent-wallet",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}
