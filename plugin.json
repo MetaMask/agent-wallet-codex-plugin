@@ -26,24 +26,23 @@
     "com.openai": {
       "interface": {
         "displayName": "MetaMask Agent Wallet",
-        "shortDescription": "Self-custodial agent wallet: balances, transfers, swaps, perps, and earn via the mm CLI.",
+        "shortDescription": "Self-custodial wallet via mm",
         "longDescription": "Use MetaMask Agent Wallet from Codex and ChatGPT desktop. The plugin packages official mm CLI skills so you can sign in, inspect addresses and balances, quote and execute swaps or bridges, trade Hyperliquid perps, use Polymarket, and supply or withdraw from yield vaults. The wallet stays self-custodial: Guard Mode, 2FA, simulation, and threat scanning apply before funds move. This plugin runs the local mm CLI, so it is desktop and Codex CLI focused rather than ChatGPT on the web or mobile.",
         "developerName": "MetaMask",
         "category": "Developer Tools",
         "capabilities": ["Read", "Write"],
         "websiteURL": "https://docs.metamask.io/agent-wallet",
+        "supportURL": "https://support.metamask.io",
         "privacyPolicyURL": "https://consensys.io/privacy-notice",
         "termsOfServiceURL": "https://consensys.io/terms-of-use",
         "defaultPrompt": [
           "Set up MetaMask Agent Wallet: help me pick a sign-in method, wallet mode, and trading mode, then show my address.",
           "Show my MetaMask Agent Wallet address and USDC balance.",
-          "Quote swapping 0.01 ETH to USDC on Base, then wait for my confirmation before executing.",
-          "List recent transactions for my active MetaMask Agent Wallet.",
-          "Check MetaMask CLI readiness with mm doctor and tell me what is missing."
+          "Quote swapping 0.01 ETH to USDC on Base, then wait for my confirmation before executing."
         ],
         "brandColor": "#F6851B",
-        "composerIcon": "./assets/logo.svg",
-        "logo": "./assets/logo.svg"
+        "composerIcon": "./assets/logo.png",
+        "logo": "./assets/logo.png"
       }
     }
   }
