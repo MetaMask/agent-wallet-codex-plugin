@@ -64,14 +64,28 @@ if (plugin) {
       "developerName",
       "category",
       "websiteURL",
+      "supportURL",
       "privacyPolicyURL",
       "termsOfServiceURL",
       "logo",
     ]) {
       if (!iface[key]) fail(`interface missing ${key}`);
     }
-    if (!Array.isArray(iface.defaultPrompt) || iface.defaultPrompt.length < 3) {
-      fail("interface.defaultPrompt needs at least 3 starter prompts");
+    if (iface.displayName.length > 30) fail("interface.displayName exceeds 30 characters");
+    if (iface.shortDescription.length > 30) fail("interface.shortDescription exceeds 30 characters");
+    if (!Array.isArray(iface.defaultPrompt) || iface.defaultPrompt.length < 1 || iface.defaultPrompt.length > 3) {
+      fail("interface.defaultPrompt needs 1 to 3 starter prompts");
+    } else {
+      const normalized = new Set();
+      for (const prompt of iface.defaultPrompt) {
+        if (typeof prompt !== "string" || !prompt.trim() || /[\\r\\n]/.test(prompt) || prompt.length > 128) {
+          fail("each interface.defaultPrompt must be a nonblank single line of at most 128 characters");
+          continue;
+        }
+        const key = prompt.replace(/\\s+/g, " ").trim();
+        if (normalized.has(key)) fail("interface.defaultPrompt entries must be unique");
+        normalized.add(key);
+      }
     }
     if (iface.logo && !exists(iface.logo.replace(/^\.\//, ""))) fail(`logo not found: ${iface.logo}`);
     if (iface.composerIcon && !exists(iface.composerIcon.replace(/^\.\//, ""))) {
@@ -102,7 +116,7 @@ for (const rel of [
   "UPSTREAM.md",
   "README.md",
   "SUBMISSION.md",
-  "assets/logo.svg",
+  "assets/logo.png",
   "LICENSE",
 ]) {
   if (!exists(rel)) fail(`missing ${rel}`);
