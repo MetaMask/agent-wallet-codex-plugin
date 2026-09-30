@@ -78,11 +78,11 @@ if (plugin) {
     } else {
       const normalized = new Set();
       for (const prompt of iface.defaultPrompt) {
-        if (typeof prompt !== "string" || !prompt.trim() || /[\\r\\n]/.test(prompt) || prompt.length > 128) {
+        if (typeof prompt !== "string" || !prompt.trim() || /[\r\n]/.test(prompt) || prompt.length > 128) {
           fail("each interface.defaultPrompt must be a nonblank single line of at most 128 characters");
           continue;
         }
-        const key = prompt.replace(/\\s+/g, " ").trim();
+        const key = prompt.replace(/\s+/g, " ").trim();
         if (normalized.has(key)) fail("interface.defaultPrompt entries must be unique");
         normalized.add(key);
       }
