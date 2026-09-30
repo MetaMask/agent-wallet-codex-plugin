@@ -43,6 +43,9 @@
         "brandColor": "#F6851B",
         "composerIcon": "./assets/logo.png",
         "logo": "./assets/logo.png"
+      },
+      "publication": {
+        "release_notes": "First public Codex and ChatGPT directory release of MetaMask Agent Wallet skills. Includes the pinned official MetaMask Agent Wallet CLI skill and Codex-specific safety guidance."
       }
     }
   }
