@@ -10,11 +10,11 @@ Docs: https://developers.openai.com/plugins/deploy/submission
 | Field | Value |
 | --- | --- |
 | Plugin name | MetaMask Agent Wallet |
-| Short description | Self-custodial agent wallet: balances, transfers, swaps, perps, and earn via the mm CLI. |
+| Short description | Self-custodial wallet via mm |
 | Long description | Use MetaMask Agent Wallet from Codex and ChatGPT desktop. The plugin packages official mm CLI skills so you can sign in, inspect addresses and balances, quote and execute swaps or bridges, trade Hyperliquid perps, use Polymarket, and supply or withdraw from yield vaults. The wallet stays self-custodial: Guard Mode, 2FA, simulation, and threat scanning apply before funds move. This plugin runs the local mm CLI, so it is desktop and Codex CLI focused rather than ChatGPT on the web or mobile. |
 | Developer identity | MetaMask / Consensys (verified **business** identity on the submitting OpenAI org) |
 | Category | Developer Tools |
-| Logo | `assets/logo.svg` |
+| Logo | `assets/logo.png` |
 | Website | https://docs.metamask.io/agent-wallet |
 | Support | https://support.metamask.io |
 | Privacy | https://consensys.io/privacy-notice |
@@ -77,7 +77,7 @@ These cannot be completed from this repo:
 
 ### What was verified in this repo (no funds moved)
 
-- Static validators: pass.
+- Static validators: pass on `main`; submission-prep metadata constraints and the 512×512 PNG icon were checked separately.
 - `mm doctor --json`: CLI reachable; this machine had `@metamask/agent-wallet/6.0.0` while the pinned skill targets **7.0.0**. Align the reviewer CLI before submission. Session was not authenticated (`authenticated: false`).
 - `codex` CLI was not on PATH here, so marketplace install was not exercised. Use ChatGPT desktop or install Codex CLI, then `codex plugin marketplace add` on this repo.
 - No login, transfer, swap execute, or npm publish was run.
